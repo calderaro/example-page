@@ -1,0 +1,9 @@
+.item {
+  width: 100%;
+  max-width: 20em;
+  padding: 2em;
+}
+
+.container {
+  padding: 2em;
+}
