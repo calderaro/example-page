@@ -15,6 +15,7 @@ export interface Item {
 export interface AppState {
   items: Item[];
   user: User | null;
+  cart: Item[];
 }
 
-export const state = proxy<AppState>({ items: [], user: null });
+export const state = proxy<AppState>({ items: [], user: null, cart: [] });

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { state, Item } from "../../store";
 import { ProductList } from "../../components/ProductList";
 import styles from "./styles.module.css";
+import { Layout } from "../../components/Layout";
 
 const initialState: Item[] = [
   { id: 1, name: "Item 1 a", price: 10 },
@@ -21,14 +22,16 @@ export function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <h1>Home</h1>
-      <ProductList
-        items={appstate.items as Item[]}
-        onSelect={(e) => {
-          navigate(`/product/${e.id}`);
-        }}
-      />
-    </div>
+    <Layout>
+      <div className={styles.container}>
+        <h1>Home</h1>
+        <ProductList
+          items={appstate.items as Item[]}
+          onSelect={(e) => {
+            navigate(`/product/${e.id}`);
+          }}
+        />
+      </div>
+    </Layout>
   );
 }
